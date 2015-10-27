@@ -8,3 +8,9 @@
 ;; (add-to-list 'load-path "~/.emacs.d/lisp")
 ;; (load "~/.emacs.d/lisp/dot_emacs.el")
 
+(add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
+(add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
+(load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
+
+(when (member "Monaco" (font-family-list))
+  (add-to-list 'default-frame-alist '(font . "Monaco")))

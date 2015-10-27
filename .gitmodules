@@ -1,0 +1,6 @@
+[submodule "solarized-emacs"]
+	path = solarized-emacs
+	url = https://github.com/bbatsov/solarized-emacs
+[submodule "dash.el"]
+	path = dash.el
+	url = https://github.com/magnars/dash.el
