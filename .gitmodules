@@ -4,3 +4,15 @@
 [submodule "dash.el"]
 	path = dash.el
 	url = https://github.com/magnars/dash.el
+[submodule "yaml-mode"]
+	path = yaml-mode
+	url = https://github.com/yoshiki/yaml-mode
+[submodule "clojure-mode"]
+	path = clojure-mode
+	url = https://github.com/clojure-emacs/clojure-mode
+[submodule "multiple-cursors.el"]
+	path = multiple-cursors.el
+	url = https://github.com/magnars/multiple-cursors.el
+[submodule "markdown-mode"]
+	path = markdown-mode
+	url = https://github.com/jrblevin/markdown-mode
