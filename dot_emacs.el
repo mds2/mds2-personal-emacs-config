@@ -12,6 +12,10 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
 (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
+(add-to-list 'load-path "~/.emacs.d/lisp/clojure-mode")
+(add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
+(load "clojure-mode")
+
 (when (member "Monaco" (font-family-list))
   (add-to-list 'default-frame-alist '(font . "Monaco")))
 
