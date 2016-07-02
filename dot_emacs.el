@@ -8,9 +8,18 @@
 ;; (add-to-list 'load-path "~/.emacs.d/lisp")
 ;; (load "~/.emacs.d/lisp/dot_emacs.el")
 
+
 (add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
 (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
+
+(add-to-list 'load-path "~/.emacs.d/lisp/slime")
+(require 'slime-autoloads)
+(setq inferior-lisp-program
+      "/usr/local/bin/sbcl") ; why is the path not set right here???
+;; (setq inferior-lisp-program
+;;       (substring (shell-command-to-string "which sbcl") 0 -1))
+(setq slime-contribs '(slime-fancy))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/clojure-mode")
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
