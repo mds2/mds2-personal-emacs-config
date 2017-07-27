@@ -19,3 +19,12 @@
 [submodule "slime"]
 	path = slime
 	url = https://github.com/slime/slime
+[submodule "SusColors-emacs"]
+	path = SusColors-emacs
+	url = https://github.com/TheSuspiciousWombat/SusColors-emacs
+[submodule "julia-emacs"]
+	path = julia-emacs
+	url = https://github.com/JuliaEditorSupport/julia-emacs
+[submodule "julia-shell-mode"]
+	path = julia-shell-mode
+	url = https://github.com/dennisog/julia-shell-mode

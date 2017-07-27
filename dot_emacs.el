@@ -8,10 +8,13 @@
 ;; (add-to-list 'load-path "~/.emacs.d/lisp")
 ;; (load "~/.emacs.d/lisp/dot_emacs.el")
 
+(setq indent-tabs-mode '())
 
 (add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
-(load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
+(add-to-list 'load-path "~/.emacs.d/lisp/SusColors-emacs")
+(load "suscolors-theme")
+;; (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
 (add-to-list 'load-path "~/.emacs.d/lisp/slime")
 (require 'slime-autoloads)
@@ -31,11 +34,26 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/yaml-mode")
 (add-to-list 'load-path "~/.emacs.d/lisp/multiple-cursors.el")
 (add-to-list 'load-path "~/.emacs.d/lisp/markdown-mode")
+(add-to-list 'load-path "~/.emacs.d/lisp/julia-emacs")
+(add-to-list 'load-path "~/.emacs.d/lisp/julia-shell-mode")
+(require 'julia-shell)
+(autoload 'julia-mode "julia-mode"
+  "Major mode for editing Julia source files" t)
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 ;; (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.jl\\'" . julia-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+
+(defun my-julia-mode-hooks ()
+  (require 'julia-shell)
+  )
+(add-hook 'julia-mode-hook 'my-julia-mode-hooks)
+(define-key julia-mode-map (kbd "C-c C-c") 'julia-shell-run-region-or-line)
+(define-key julia-mode-map (kbd "C-c C-s") 'julia-shell-save-and-go)
+
 
 (require 'multiple-cursors)
 
