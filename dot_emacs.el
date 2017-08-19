@@ -16,13 +16,17 @@
 (load "suscolors-theme")
 ;; (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
+(message (concat "I think sbcl is at :: "
+		 (substring
+		  (shell-command-to-string "which sbcl") 0 -1)))
 (add-to-list 'load-path "~/.emacs.d/lisp/slime")
 (require 'slime-autoloads)
 (setq inferior-lisp-program
-      "/usr/local/bin/sbcl") ; why is the path not set right here???
-;; (setq inferior-lisp-program
-;;       (substring (shell-command-to-string "which sbcl") 0 -1))
+      (substring (shell-command-to-string "which sbcl") 0 -1))
 (setq slime-contribs '(slime-fancy))
+
+(add-to-list 'load-path "~/.emacs.d/lisp/geiser/elisp/")
+(load "geiser")
 
 (add-to-list 'load-path "~/.emacs.d/lisp/clojure-mode")
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))

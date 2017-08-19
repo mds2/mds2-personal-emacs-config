@@ -28,3 +28,6 @@
 [submodule "julia-shell-mode"]
 	path = julia-shell-mode
 	url = https://github.com/dennisog/julia-shell-mode
+[submodule "geiser"]
+	path = geiser
+	url = https://github.com/jaor/geiser
