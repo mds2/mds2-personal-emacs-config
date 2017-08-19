@@ -13,7 +13,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
 (add-to-list 'load-path "~/.emacs.d/lisp/SusColors-emacs")
-(load "suscolors-theme")
+(if window-system
+    (load "suscolors-theme"))
 ;; (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
 (message (concat "I think sbcl is at :: "
