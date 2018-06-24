@@ -26,6 +26,10 @@
       (substring (shell-command-to-string "which sbcl") 0 -1))
 (setq slime-contribs '(slime-fancy))
 
+;; consider adding
+;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
+
+
 (add-to-list 'load-path "~/.emacs.d/lisp/geiser/elisp/")
 (load "geiser")
 
