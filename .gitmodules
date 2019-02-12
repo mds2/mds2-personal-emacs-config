@@ -31,3 +31,6 @@
 [submodule "geiser"]
 	path = geiser
 	url = https://github.com/jaor/geiser
+[submodule "rust-mode"]
+	path = rust-mode
+	url = https://github.com/rust-lang/rust-mode
