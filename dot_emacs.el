@@ -17,14 +17,17 @@
     (load "suscolors-theme"))
 ;; (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
-(message (concat "I think sbcl is at :: "
-		 (substring
-		  (shell-command-to-string "which sbcl") 0 -1)))
-(add-to-list 'load-path "~/.emacs.d/lisp/slime")
-(require 'slime-autoloads)
-(setq inferior-lisp-program
-      (substring (shell-command-to-string "which sbcl") 0 -1))
-(setq slime-contribs '(slime-fancy))
+(if (> (length (shell-command-to-string "which sbcl")) 0)
+    (progn
+      (message (concat "I think sbcl is at :: "
+		       (substring
+			(shell-command-to-string "which sbcl") 0 -1)))
+      (add-to-list 'load-path "~/.emacs.d/lisp/slime")
+      (require 'slime-autoloads)
+      (setq inferior-lisp-program
+	    (substring (shell-command-to-string "which sbcl") 0 -1))
+      (setq slime-contribs '(slime-fancy)))
+  (message "sbcl not found"))
 
 ;; consider adding
 ;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
@@ -40,6 +43,10 @@
 (when (member "Monaco" (font-family-list))
   (add-to-list 'default-frame-alist '(font . "Monaco")))
 
+(add-to-list 'load-path "~/.emacs.d/lisp/rust-mode")
+(load "rust-mode")
+(autoload 'rust-mode "rust-mode"
+  "Major mode for editing rust files" t)
 (add-to-list 'load-path "~/.emacs.d/lisp/yaml-mode")
 (add-to-list 'load-path "~/.emacs.d/lisp/multiple-cursors.el")
 (add-to-list 'load-path "~/.emacs.d/lisp/markdown-mode")
