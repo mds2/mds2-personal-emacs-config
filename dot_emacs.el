@@ -9,7 +9,11 @@
 ;; (load "~/.emacs.d/lisp/dot_emacs.el")
 
 (setq indent-tabs-mode '())
+(setq js-indent-level 2)
 
+(defun set-width (n)
+	 (interactive "nn new width")
+	 (set-frame-width (selected-frame) n))
 (add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
 (add-to-list 'load-path "~/.emacs.d/lisp/SusColors-emacs")
