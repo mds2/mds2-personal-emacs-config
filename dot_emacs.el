@@ -40,6 +40,9 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/geiser/elisp/")
 (load "geiser")
 
+(add-to-list 'load-path "~/.emacs.d/lisp/emacs-pug-mode")
+(require 'pug-mode)
+
 (add-to-list 'load-path "~/.emacs.d/lisp/clojure-mode")
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
 (load "clojure-mode")
