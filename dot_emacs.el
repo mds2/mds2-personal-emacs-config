@@ -9,7 +9,10 @@
 ;; (load "~/.emacs.d/lisp/dot_emacs.el")
 
 (setq indent-tabs-mode '())
+(setq-default indent-tabs-mode nil)
 (setq js-indent-level 2)
+
+(add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
 
 (defun set-width (n)
 	 (interactive "nn new width")
@@ -36,12 +39,15 @@
 ;; consider adding
 ;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
 
+;; load zippy stuff if it exists
+(load "yow" 'noerror)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/geiser/elisp/")
 (load "geiser")
 
 (add-to-list 'load-path "~/.emacs.d/lisp/emacs-pug-mode")
 (require 'pug-mode)
+(setq pug-tab-width 2)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/clojure-mode")
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
