@@ -24,6 +24,10 @@
     (load "suscolors-theme"))
 ;; (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
+(if (> (length (shell-command-to-string "which ag")) 0)
+    (setq grep-command "ag --vimgrep "
+          grep-use-null-device nil))
+
 (if (> (length (shell-command-to-string "which sbcl")) 0)
     (progn
       (message (concat "I think sbcl is at :: "
