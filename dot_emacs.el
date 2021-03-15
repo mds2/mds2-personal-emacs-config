@@ -53,8 +53,10 @@
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
 (load "clojure-mode")
 
-(when (member "Monaco" (font-family-list))
-  (add-to-list 'default-frame-alist '(font . "Monaco")))
+(if (member "Space Mono" (font-family-list))
+  (add-to-list 'default-frame-alist '(font . "Space Mono"))
+  (when (member "Monaco" (font-family-list))
+    (add-to-list 'default-frame-alist '(font . "Monaco"))))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/rust-mode")
 (load "rust-mode")
