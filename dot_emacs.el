@@ -8,6 +8,15 @@
 ;; (add-to-list 'load-path "~/.emacs.d/lisp")
 ;; (load "~/.emacs.d/lisp/dot_emacs.el")
 
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.
+;; See `package-archive-priorities` and `package-pinned-packages`.
+;; Most users will not need or want to do this.
+;; (add-to-list 'package-archives
+;;              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
+
 (setq indent-tabs-mode '())
 (setq-default indent-tabs-mode nil)
 (setq js-indent-level 2)
