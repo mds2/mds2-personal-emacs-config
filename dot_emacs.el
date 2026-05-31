@@ -91,14 +91,12 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-
 (defun my-julia-mode-hooks ()
   (require 'julia-shell)
   )
 (add-hook 'julia-mode-hook 'my-julia-mode-hooks)
 (define-key julia-mode-map (kbd "C-c C-c") 'julia-shell-run-region-or-line)
 (define-key julia-mode-map (kbd "C-c C-s") 'julia-shell-save-and-go)
-
 
 (require 'multiple-cursors)
 
