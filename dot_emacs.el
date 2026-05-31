@@ -19,9 +19,9 @@
   (set-frame-width (selected-frame) n))
 (add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
-(add-to-list 'load-path "~/.emacs.d/lisp/SusColors-emacs")
-(if window-system
-    (load "suscolors-theme"))
+;; (add-to-list 'load-path "~/.emacs.d/lisp/SusColors-emacs")
+;; (if window-system
+;;     (load "suscolors-theme"))
 (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
 (if (> (length (shell-command-to-string "which ag")) 0)
