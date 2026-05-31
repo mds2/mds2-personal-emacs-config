@@ -15,14 +15,14 @@
 (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
 
 (defun set-width (n)
-	 (interactive "nn new width")
-	 (set-frame-width (selected-frame) n))
+  (interactive "nn new width")
+  (set-frame-width (selected-frame) n))
 (add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
 (add-to-list 'load-path "~/.emacs.d/lisp/SusColors-emacs")
 (if window-system
     (load "suscolors-theme"))
-;; (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
+(load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
 (if (> (length (shell-command-to-string "which ag")) 0)
     (setq grep-command "ag --vimgrep "
@@ -44,10 +44,11 @@
 ;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
 
 ;; load zippy stuff if it exists
-(load "yow" 'noerror)
+;; (load "yow" 'noerror)
+;; perhaps replace "yow" with a new program called "meow"?
 
-(add-to-list 'load-path "~/.emacs.d/lisp/geiser/elisp/")
-(load "geiser")
+;; (add-to-list 'load-path "~/.emacs.d/lisp/geiser/elisp/")
+;; (load "geiser")
 
 (add-to-list 'load-path "~/.emacs.d/lisp/emacs-pug-mode")
 (require 'pug-mode)
